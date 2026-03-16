@@ -7,6 +7,7 @@
       infra-devcontainer = ./modules/infra-devcontainer.nix;
       infra-graphic = ./modules/infra-graphic.nix;
       lang-haskell = ./modules/lang-haskell.nix;
+      lang-haskell-registry = ./modules/lang-haskell-registry.nix;
       lang-nix = ./modules/lang-nix.nix;
     };
 
