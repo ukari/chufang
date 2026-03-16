@@ -1,0 +1,12 @@
+*~
+.devenv/
+.devenv.*/
+.direnv/
+.devcontainer.json
+.devcontainer/devcontainer.json
+.secrets/
+.secrets
+.envrc.local
+.devcontainer/*.secret
+.devcontainer/.local/.Xauthority
+
