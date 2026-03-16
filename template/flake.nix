@@ -2,12 +2,14 @@
   description = "Description for the project";
 
   inputs = {
-    chufang.url = "github:ukari/chufang";
     devenv-root = {
       url = "file+file:///dev/null";
       flake = false;
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    chufang = {
+      url = "github:ukari/chufang";
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
