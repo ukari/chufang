@@ -15,7 +15,6 @@ in
 
   enterShell = ''
     echo "🛡️ Devenv Sandbox Environment Activated!"
-    ghc --version
   '';
 
   devcontainer.settings = {
