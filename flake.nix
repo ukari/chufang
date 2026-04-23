@@ -20,8 +20,12 @@
 
     templates = {
       default = {
-        path = ./template;
+        path = ./templates/default;
         description = "chufang project template";
+      };
+      local-dev = {
+        path = ./templates/local-dev;
+        description = "chufang project template for local chufang development";
       };
     };
   };
