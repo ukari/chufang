@@ -9,7 +9,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chufang = {
       url = "github:ukari/chufang";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

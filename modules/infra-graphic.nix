@@ -42,7 +42,6 @@ in
   devcontainer.settings = {
     runArgs = [
       "--device=/dev/dri"
-      "--ipc=host"
       "--group-add=keep-groups"
     ];
 
