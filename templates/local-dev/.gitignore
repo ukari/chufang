@@ -3,10 +3,7 @@
 .devenv.*/
 .direnv/
 .devcontainer.json
-.devcontainer/devcontainer.json
+.devcontainer/
 .secrets/
 .secrets
 .envrc.local
-.devcontainer/*.secret
-.devcontainer/.local/.Xauthority
-
