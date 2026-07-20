@@ -1,4 +1,0 @@
-*~
-.devcontainer/devcontainer.json
-.devcontainer/*.secret
-.devcontainer/.local/.Xauthority

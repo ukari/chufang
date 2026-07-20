@@ -1,32 +1,31 @@
 {
   description = "chufang";
 
-  outputs = { self, ... }: {
-    modules = {
-      infra-common = ./modules/infra-common.nix;
-      infra-devcontainer = ./modules/infra-devcontainer.nix;
-      infra-graphic = ./modules/infra-graphic.nix;
-      infra-ci-act = ./modules/infra-ci-act.nix;
-      lang-haskell = ./modules/lang-haskell.nix;
-      lang-haskell-registry = ./modules/lang-haskell-registry.nix;
-      lang-java = ./modules/lang-java.nix;
-      lang-nix = ./modules/lang-nix.nix;
-      lang-python = ./modules/lang-python.nix;
-    };
+  outputs =
+    { self, ... }:
+    {
 
-    suites = {
-      core = ./suites/core.nix;
-    };
+      devenv = {
+        bootstrap = ./devenv/bootstrap.nix;
+      };
 
-    templates = {
-      default = {
-        path = ./templates/default;
-        description = "chufang project template";
+      nixos = {
+        configuration = ./nixos/configuration.nix;
+        nix-registry = ./nixos/nix-registry.nix;
+        git = ./nixos/git.nix;
+        podman = ./nixos/podman.nix;
+        fhs-compat = ./nixos/fhs-compat.nix;
+        xdg-compat = ./nixos/xdg-compat.nix;
+        vscode-compat = ./nixos/vscode-compat.nix;
+        direnv = ./nixos/direnv.nix;
+        devenv = ./nixos/devenv.nix;
+        constants = ./nixos/constants.nix;
+        nix-overlay-store = ./nixos/nix-overlay-store.nix;
+        nix-host-substituter = ./nixos/nix-host-substituter.nix;
       };
-      local-dev = {
-        path = ./templates/local-dev;
-        description = "chufang project template for local chufang development";
+
+      templates = {
+
       };
     };
-  };
 }
