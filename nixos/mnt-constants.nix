@@ -5,6 +5,7 @@ rec {
   persistNixMnt = "/mnt/persist-nix";
   
   hostNixRegistryMnt = "/mnt/host-nix-registry.json";
-  # secretsDir = "/var/secrets";
-  # nixAccessTokenConfPath = "${secretsDir}/nix-access-tokens.conf";
+
+  secretsDir = "/var/secrets/chufang";
+  nixAccessTokensSecretsDir = "${secretsDir}/nix-access-tokens";
 }

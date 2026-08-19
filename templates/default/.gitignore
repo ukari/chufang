@@ -1,0 +1,10 @@
+*~
+.devenv/
+.devenv.*/
+.direnv/
+.devcontainer.json
+.devcontainer/
+.secrets/
+.secrets
+.envrc.local
+secretspec.local.toml

@@ -68,10 +68,8 @@
     gnused
     gnugrep
     gnutar
-    glibc
+    # glibc
   ];
-
-  programs.nix-ld.enable = true;
 
   environment.variables = {
     # VSCODE_SERVER_CUSTOM_GLIBC_LINKER = pkgs.stdenv.cc.bintools.dynamicLinker;

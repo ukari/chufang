@@ -11,8 +11,12 @@
         ./nix-registry.nix
         ./git.nix
 
+        ./core-options.nix
+        
+
         ./podman.nix
 
+        ./ld-compat.nix
         ./fhs-compat.nix
         ./xdg-compat.nix
         ./vscode-compat.nix
@@ -20,9 +24,17 @@
         ./direnv.nix
         ./devenv.nix
 
+        ./nix-access-tokens.nix
+        ./nix-daemon-socket.nix
         ./nix-host-substituter.nix
         ./nix-overlay-store.nix
       ];
+
+       attributeSetPaths = [
+        ./mnt-constants.nix
+      ];
+
+      sourceFiles = modulePaths ++ attributeSetPaths;
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
@@ -103,7 +115,7 @@
               filename = builtins.baseNameOf path;
             in
             makeCopyFileStr filename path
-          ) modulePaths);
+          ) sourceFiles);
 
           validUsers = pkgs.lib.filterAttrs (n: u: u.uid != null) nixosCfg.config.users.users;
           validGroups = pkgs.lib.filterAttrs (n: g: g.gid != null) nixosCfg.config.users.groups;
